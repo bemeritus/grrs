@@ -15,7 +15,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in {
       formatter = pkgs.alejandra;
-
-      devShells.default = import ./shell.nix {inherit pkgs;};
+      packages.default = import ./default.nix { inherit pkgs; }
+      devShells.default = import ./shell.nix { inherit pkgs; };
     });
 }
